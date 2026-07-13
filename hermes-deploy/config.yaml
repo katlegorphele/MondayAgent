@@ -1,0 +1,25 @@
+# ── Model ───────────────────────────────────────
+model:
+  default: "deepseek/deepseek-chat"
+  provider: "deepseek"
+
+# ── Gateway ─────────────────────────────────────
+gateway:
+  platforms:
+    telegram:
+      enabled: true
+
+# ── Terminal backend (Railway = local, no Docker-in-Docker) ──
+terminal:
+  backend: local
+
+# ── Voice (off by default to save tokens) ──
+stt:
+  enabled: false
+tts:
+  enabled: false
+
+# ── Memory ──────────────────────────────────────
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
