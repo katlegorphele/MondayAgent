@@ -7,6 +7,9 @@ RUN apt-get update && apt-get install -y curl git xz-utils ca-certificates && \
     curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Add common Hermes install locations to PATH
+ENV PATH="/root/.local/bin:/root/.hermes/bin:/usr/local/bin:${PATH}"
+
 # Copy skills
 COPY skills/ /root/.hermes/skills/
 
